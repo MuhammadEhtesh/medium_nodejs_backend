@@ -12,6 +12,7 @@ const customerRouter = require("./routes/customer.routes");
 
 const db = require("./models/index");
 db.sequelize.sync();
+const port = process.env.PORT || 3000;
 
 app.use("/", customerRouter);
 
@@ -19,4 +20,4 @@ process.on("unhandledRejection", (err) => {
   console.log(err);
 });
 
-app.listen(3000, () => console.log("server is listening"));
+app.listen(port, () => console.log(`server is listening at ${port}`));
