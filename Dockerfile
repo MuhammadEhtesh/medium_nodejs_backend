@@ -1,5 +1,5 @@
 FROM node:12
-WORKDIR /Users/Shani/Desktop/tutorial
+WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
