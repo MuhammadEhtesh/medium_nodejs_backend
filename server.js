@@ -23,7 +23,7 @@ setTimeout(
         console.log(`Authenticated`);
       })
       .catch((err) => console.log(`Error occurred `, err)),
-  20000
+  10000
 );
 
 const port = process.env.PORT || 3000;
