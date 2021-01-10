@@ -1,0 +1,33 @@
+version: "3.7"
+services:
+  postgres:
+    container_name: "psql"
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 12345
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./tutorial-db:/var/lib/postgresql/data
+
+  tutorial:
+    container_name: "restapi"
+    build:
+      context: .
+    environment:
+      DB_SCHEMA: postgres
+      DB_USER: postgres
+      DB_PASSWORD: 12345
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_DATABASE: angular
+    depends_on:
+      - postgres
+    links:
+      - postgres
+    ports:
+      - "3000:3000"
+volumes:
+  tutorial-db:

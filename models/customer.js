@@ -14,9 +14,6 @@ module.exports = (sequelize, Sequelize) => {
       email: {
         type: Sequelize.STRING,
       },
-      imageUrl: {
-        type: Sequelize.STRING,
-      },
     },
     {
       tableName: "Customers",
