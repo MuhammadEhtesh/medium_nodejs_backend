@@ -1,7 +1,7 @@
 version: "3.7"
 services:
   postgres:
-    container_name: "psql"
+    container_name: psql
     image: postgres
     restart: always
     environment:
@@ -12,8 +12,8 @@ services:
     volumes:
       - ./tutorial-db:/var/lib/postgresql/data
 
-  tutorial:
-    container_name: "restapi"
+  node_api:
+    container_name: restapi
     build:
       context: .
     environment:
