@@ -16,6 +16,13 @@ services:
     container_name: restapi
     build:
       context: .
+    environment:
+      DB_SCHEMA: postgres
+      DB_USER: postgres
+      DB_PASSWORD: 12345
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_DATABASE: angular
     depends_on:
       - postgres
     links:
