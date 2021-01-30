@@ -4,7 +4,6 @@ const morgan = require("morgan");
 const express = require("express");
 const db = require("./models/index");
 const bodyParser = require("body-parser");
-require("dotenv").config();
 const customerRouter = require("./routes/customer.routes");
 
 const app = express();
@@ -26,7 +25,7 @@ setTimeout(
   10000
 );
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 const dbPort = process.env.POSTGRES_PORT;
 
 app.use("/", customerRouter);
